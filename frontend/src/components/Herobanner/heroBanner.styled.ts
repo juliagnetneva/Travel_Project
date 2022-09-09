@@ -8,7 +8,12 @@ export const HeroBannerStyled = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-
+  @media screen and (max-width: 960px) {
+    height: 50vw;
+  }
+  @media screen and (max-width: 768px) {
+    height: 50vh;
+  }
   & img {
     width: 100%;
     height: 100%;
@@ -25,8 +30,7 @@ export const HeroBannerTextStyled = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  color: #fff;
   position: relative;
 `;

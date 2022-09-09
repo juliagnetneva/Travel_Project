@@ -7,7 +7,7 @@ export const BurgerStyled: any = styled.div`
     flex-direction: column;
     justify-content: space-between;
     z-index: 100;
-    width: 2.5rem;
+    width: 2.3rem;
     height: 2.2rem;
     position: fixed;
     top: 30px;
@@ -17,7 +17,8 @@ export const BurgerStyled: any = styled.div`
       height: 0.3rem;
       border-radius: 2px;
       margin: 0.2rem;
-      background-color: ${({ open }: any) => (open ? "#a8abab" : "#e5e5e5")};
+      background-color: ${({ open }: any) => (open ? "#b7b7b7" : "#ffffff")};
+      box-shadow: ${({ open }: any) => (open ? "" : "1px 1px 3px #bbbbbb")};
       transform-origin: 1px;
       transition: all 0.2s linear;
       &:nth-child(1) {

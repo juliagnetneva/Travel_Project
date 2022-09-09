@@ -1,7 +1,12 @@
 import React from "react";
 import ReactPlayer from "react-player";
 //
-import { ButtonRed, MainHeading } from "../shared";
+import {
+  ButtonRed,
+  HeadingBold,
+  HeadingOutlined,
+  HeadingRedCursive,
+} from "../shared";
 import { HeroBannerStyled, HeroBannerTextStyled } from "./heroBanner.styled";
 
 export const HeroBanner = ({ image, video }: any) => {
@@ -23,7 +28,11 @@ export const HeroBanner = ({ image, video }: any) => {
         )}
       </HeroBannerStyled>
       <HeroBannerTextStyled>
-        <MainHeading>Discover the planet</MainHeading>
+        <HeadingBold>
+          Discover<HeadingRedCursive>the</HeadingRedCursive>
+          <br />
+          <HeadingOutlined>PLANET</HeadingOutlined>
+        </HeadingBold>
         <ButtonRed>Get started</ButtonRed>
       </HeroBannerTextStyled>{" "}
     </>

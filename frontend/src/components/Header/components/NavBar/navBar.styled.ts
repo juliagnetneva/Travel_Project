@@ -13,7 +13,7 @@ export const NavBarStyled = styled.nav`
     font-weight: 600;
     font-size: 1.2rem;
     line-height: 1.5rem;
-    text-shadow: 2px 1px 1px #4f4f4f;
+    text-shadow: 2px 1px 2px #838383;
     transition: all 0.1s linear;
   }
 
