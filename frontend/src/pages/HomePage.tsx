@@ -1,16 +1,31 @@
 import React from "react";
 //
-import { Carousel, HeroBanner } from "../components";
+import { Banner, BannerImage, Carousel, HeroBanner } from "../components";
 import { data } from "../data/homePageData";
+import { dataImg, sliderSettingsImg } from "../data/carouselData";
+import { dataVid, sliderSettingsVid } from "../data/carouselData";
+import BannerSm from "../assets/bannerSmall.jpg";
 
 export const HomePage = () => {
-  console.log(data);
   return (
     <>
-      <div style={{ height: "40vw" }}>
-        <HeroBanner video={data.video} image={data.image} />
-      </div>
-      <Carousel />
+      <HeroBanner video={data.video} image={data.image} />
+      <Carousel
+        data={dataImg}
+        settings={sliderSettingsImg}
+        title={"POPULAR ROUTS"}
+        path={"/search"}
+        text={"View more "}
+      />
+      <Banner />
+      <BannerImage image={BannerSm} />
+      <Carousel
+        data={dataVid}
+        settings={sliderSettingsVid}
+        title={"FAR FROM PEOPLE"}
+        path={"/search"}
+        text={"Search more "}
+      />
     </>
   );
 };

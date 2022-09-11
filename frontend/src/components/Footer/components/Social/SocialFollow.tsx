@@ -26,21 +26,21 @@ export const SocialFollow = () => {
         style={{ color: "#574a4a" }}
         target="_blank"
       >
-        <FontAwesomeIcon icon={faInstagram} />
+        <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
       <a
         href="https://www.facebook.com/"
         style={{ color: "#4968ad" }}
         target="_blank"
       >
-        <FontAwesomeIcon icon={faFacebook} />
+        <FontAwesomeIcon icon={faFacebook} size="2x" />
       </a>
       <a
         href="https://www.youtube.com/"
         style={{ color: "#eb3323" }}
         target="_blank"
       >
-        <FontAwesomeIcon icon={faYoutube} />
+        <FontAwesomeIcon icon={faYoutube} size="2x" />
       </a>
     </SocialFollowStyled>
   );

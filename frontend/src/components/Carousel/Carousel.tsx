@@ -1,41 +1,63 @@
 import React, { useState } from "react";
-import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
+import ReactPlayer from "react-player";
 import { IconContext } from "react-icons";
+import { IoIosArrowDropleft, IoIosArrowDropright } from "react-icons/io";
 //
 import {
-  CarouselImage,
-  ImageWrapper,
+  SliderItem,
   ReviewSlider,
   ButtonContainer,
+  CarouselSection,
+  TextContainer,
+  ImageContainer,
+  VideoContainer,
 } from "./carousel.styled";
-import { data, sliderSettings } from "../../data/carouselData";
-import { ButtonRed, FlexRow, Heading, Section, TextWrap } from "../shared";
+import { FlexRow, HeadingMiddle, HeadingSmall, LinkMore } from "../shared";
+import { ButtonWhite } from "../shared/buttons/buttonWhite.styled";
 
-export const Carousel = () => {
+export const Carousel = ({ title, path, text, settings, data }: any) => {
   const [slider, setSlider] = useState<any>(null);
 
   return (
-    <Section>
-      <FlexRow style={{ margin: "1rem", wrap: "wrap", height: "100%" }}>
-        <Heading>Popular routs</Heading>
-        <ButtonContainer>
-          <IconContext.Provider value={{ size: "3rem", color: "#1d609c" }}>
-            <IoIosArrowDropleft onClick={slider?.slickPrev} />
-            <IoIosArrowDropright onClick={slider?.slickNext} />
-          </IconContext.Provider>
-        </ButtonContainer>
+    <CarouselSection>
+      <FlexRow>
+        <HeadingMiddle>{title}</HeadingMiddle>
+        <LinkMore path={path} text={text} />
       </FlexRow>
-
-      <ReviewSlider {...sliderSettings} ref={setSlider}>
-        {data.map((el, index) => (
-          <ImageWrapper key={index}>
-            <CarouselImage src={el.image} />
-            <TextWrap>{el.title}</TextWrap>
-            <TextWrap>{el.description}</TextWrap>
-            <ButtonRed>Learn more</ButtonRed>
-          </ImageWrapper>
+      <ReviewSlider {...settings} ref={setSlider}>
+        {data.map((el: any, index: any) => (
+          <SliderItem key={index}>
+            {el.image ? (
+              <>
+                <ImageContainer>
+                  <img src={el.image} alt={el.title} />
+                </ImageContainer>
+                <TextContainer>
+                  <HeadingSmall>{el.title}</HeadingSmall>
+                  <ButtonWhite>Learn more</ButtonWhite>
+                </TextContainer>
+              </>
+            ) : (
+              <VideoContainer>
+                <ReactPlayer
+                  url={el.video}
+                  autoPlay
+                  loop
+                  controls
+                  width="100%"
+                  height="100%"
+                />
+              </VideoContainer>
+            )}
+          </SliderItem>
         ))}
       </ReviewSlider>
-    </Section>
+      <ButtonContainer>
+        <IconContext.Provider value={{ size: "2.5rem", color: "#605f5f" }}>
+          <IoIosArrowDropleft onClick={slider?.slickPrev} />
+          <IoIosArrowDropright onClick={slider?.slickNext} />
+        </IconContext.Provider>
+      </ButtonContainer>
+    </CarouselSection>
   );
 };

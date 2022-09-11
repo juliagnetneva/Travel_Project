@@ -28,17 +28,14 @@ export const HeadingOutlined = styled.span`
   }
 `;
 
-export const Heading = styled.h3`
+export const HeadingMiddle = styled.h3`
   font-size: 1.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.06;
-  text-align: center;
-  width: 100%;
+  margin: 0;
   color: ${({ theme }) => theme.theme.text};
 `;
 
-export const HeadingSmall = styled.div`
-  color: #444444;
+export const HeadingSmall = styled.h4`
+  color: ${({ theme }) => theme.theme.text};
   font-size: 1rem;
   line-height: 1.5rem;
   font-weight: 600;
@@ -47,5 +44,4 @@ export const HeadingSmall = styled.div`
 
 export const TextWrap = styled.p`
   color: ${({ theme }) => theme.theme.text};
-  font-size: 1rem;
 `;

@@ -7,12 +7,16 @@ import {
   HeadingOutlined,
   HeadingRedCursive,
 } from "../shared";
-import { HeroBannerStyled, HeroBannerTextStyled } from "./heroBanner.styled";
+import {
+  HeroBannerContainer,
+  HeroBannerImgStyled,
+  HeroBannerTextStyled,
+} from "./heroBanner.styled";
 
 export const HeroBanner = ({ image, video }: any) => {
   return (
-    <>
-      <HeroBannerStyled>
+    <HeroBannerContainer>
+      <HeroBannerImgStyled>
         {video ? (
           <ReactPlayer
             url={video}
@@ -26,7 +30,7 @@ export const HeroBanner = ({ image, video }: any) => {
         ) : (
           <img src={image} alt="Discover the Planet" />
         )}
-      </HeroBannerStyled>
+      </HeroBannerImgStyled>
       <HeroBannerTextStyled>
         <HeadingBold>
           Discover<HeadingRedCursive>the</HeadingRedCursive>
@@ -35,6 +39,6 @@ export const HeroBanner = ({ image, video }: any) => {
         </HeadingBold>
         <ButtonRed>Get started</ButtonRed>
       </HeroBannerTextStyled>{" "}
-    </>
+    </HeroBannerContainer>
   );
 };

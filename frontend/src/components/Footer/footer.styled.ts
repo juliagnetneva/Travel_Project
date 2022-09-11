@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const FooterStyled = styled.footer`
   width: 100%;
   min-height: 100px;
-  background-color: #e8ebf2;
+  background-color: ${({ theme }) => theme.theme.sectionBackground};
+  box-shadow: ${({ theme }) => theme.theme.boxShadow};
   color: #9ea1a8;
   font-size: 0.9rem;
   display: flex;

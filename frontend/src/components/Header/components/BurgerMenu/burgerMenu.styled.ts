@@ -13,7 +13,7 @@ export const BurgerMenuStyled: any = styled.div`
     right: 0;
     height: 100vh;
     width: 16rem;
-    background: rgba(42, 51, 68, 0.6);
+    background: rgba(58, 60, 70, 0.75);
     padding: 4rem 0 0 1rem;
     transition: all 0.3s ease-in-out;
     a {

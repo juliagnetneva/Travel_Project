@@ -6,7 +6,7 @@ export const Main = styled.main`
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   max-width: 1300px;
   margin: 0 auto;
   padding: 0 30px;
@@ -17,16 +17,8 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
-  width: 97%;
-  border: 1px solid lightgray;
-  margin: auto;
-  max-width: 1280px;
-  padding: 50px 70px;
-  // inverse
-`;
-
-export const Card = styled.div`
-  box-shadow: ${({ theme }) => theme.theme.boxShadow};
+  width: 100%;
+  margin: 0 auto;
 `;
 
 export const FlexRow: any = styled.div`

@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
-export const HeroBannerStyled = styled.div`
+export const HeroBannerContainer = styled.div`
+  height: 40vw;
+  @media screen and (max-width: 960px) {
+    height: 40vw;
+  }
+  @media screen and (max-width: 768px) {
+    height: 35vh;
+  }
+`;
+
+export const HeroBannerImgStyled = styled.div`
   height: 45vw;
   background-color: #e7e6eb;
   position: absolute;
@@ -12,14 +22,13 @@ export const HeroBannerStyled = styled.div`
     height: 50vw;
   }
   @media screen and (max-width: 768px) {
-    height: 50vh;
+    height: 45vh;
   }
   & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-
   & video {
     object-fit: cover;
     z-index: -1;
@@ -27,7 +36,6 @@ export const HeroBannerStyled = styled.div`
 `;
 
 export const HeroBannerTextStyled = styled.div`
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
