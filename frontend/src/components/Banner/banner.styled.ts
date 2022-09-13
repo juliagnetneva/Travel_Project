@@ -58,5 +58,6 @@ export const Card = styled(FlexRow)`
   }
   p {
     font-size: 0.8rem;
+    margin-top: 5px;
   }
 `;

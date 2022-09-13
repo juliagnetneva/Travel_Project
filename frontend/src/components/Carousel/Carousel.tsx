@@ -53,7 +53,7 @@ export const Carousel = ({ title, path, text, settings, data }: any) => {
         ))}
       </ReviewSlider>
       <ButtonContainer>
-        <IconContext.Provider value={{ size: "2.5rem", color: "#605f5f" }}>
+        <IconContext.Provider value={{ size: "2.5rem", color: "#a2a2a2" }}>
           <IoIosArrowDropleft onClick={slider?.slickPrev} />
           <IoIosArrowDropright onClick={slider?.slickNext} />
         </IconContext.Provider>

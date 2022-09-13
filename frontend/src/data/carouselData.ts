@@ -13,6 +13,9 @@ import Video5 from "../assets/video/video_carousel5.mp4";
 export const sliderSettingsImg = {
   arrows: false,
   slidesToShow: 3,
+  dots: true,
+  autoplay: true,
+  autoplaySpeed: 3000,
   focusOnSelect: false,
   accessibility: false,
   responsive: [
@@ -34,6 +37,7 @@ export const sliderSettingsImg = {
 export const sliderSettingsVid = {
   arrows: false,
   slidesToShow: 2,
+  dots: true,
   focusOnSelect: false,
   accessibility: false,
   responsive: [

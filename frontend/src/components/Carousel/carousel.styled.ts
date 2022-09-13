@@ -10,13 +10,49 @@ export const CarouselSection = styled(Section)`
 
 export const ReviewSlider: any = styled(Slider)`
   width: 100%;
+  
   .slick-list {
     overflow: hidden;
   }
-  .slick-track {
-    display: flex;
-    padding: 1rem;
-    gap: 3rem;
+
+  .slick-dots {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 2rem 0;
+
+    list-style-type: none;
+
+    li {
+      margin: 0 1rem;
+    }
+
+    button {
+      display: block;
+      width: 0.55rem;
+      height: 0.55rem;
+      padding: 0;
+
+      border: none;
+      border-radius: 100%;
+      background-color: #d3d3d3;
+
+      text-indent: -9999px;
+    }
+
+    li.slick-active button {
+      background-color: #8c8c8c;
+    }
+
+  }
+}
+
+.slick-track {
+  display: flex;
+  padding: 1rem;
+  gap: 2rem;
+
   .slick-slide {
     display: flex;
     justify-content: center;
@@ -33,7 +69,7 @@ export const SliderItem = styled.div`
   height: 430px;
   background-color: ${({ theme }) => theme.theme.sectionBackground};
   box-shadow: ${({ theme }) => theme.theme.boxShadow};
-  border-radius: 10px;
+  border-radius: 7px;
   outline: none;
   @media screen and (max-width: 440px) {
     border: 1px solid #bebebe;
@@ -43,11 +79,12 @@ export const SliderItem = styled.div`
 export const ImageContainer = styled.div`
   width: 100%;
   height: 320px;
+  border-radius: 7px 7px 0 0;
   overflow: hidden;
   img {
     width: 100%;
     height: 100%;
-    border-radius: 10px 10px 0 0;
+    border-radius: 7px 7px 0 0;
     object-fit: cover;
     vertical-align: middle;
     transition: transform 3s ease;
@@ -72,8 +109,10 @@ export const VideoContainer = styled.div`
 `;
 export const ButtonContainer = styled(FlexRow)`
   justify-content: center;
+  position: relative;
+  top: -55px;
   & svg {
-    margin: 0 1rem;
+    margin: 0 8rem;
     cursor: pointer;
   }
   & svg:hover {
