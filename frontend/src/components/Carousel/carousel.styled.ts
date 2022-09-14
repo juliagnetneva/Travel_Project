@@ -10,41 +10,32 @@ export const CarouselSection = styled(Section)`
 
 export const ReviewSlider: any = styled(Slider)`
   width: 100%;
-  
   .slick-list {
-    overflow: hidden;
+    //overflow: hidden;
   }
-
   .slick-dots {
     display: flex !important;
     flex-direction: row;
     justify-content: center;
     margin: 0;
     padding: 2rem 0;
-
     list-style-type: none;
-
     li {
       margin: 0 1rem;
     }
-
     button {
       display: block;
       width: 0.55rem;
       height: 0.55rem;
       padding: 0;
-
       border: none;
       border-radius: 100%;
       background-color: #d3d3d3;
-
       text-indent: -9999px;
     }
-
     li.slick-active button {
       background-color: #8c8c8c;
     }
-
   }
 }
 
@@ -52,7 +43,6 @@ export const ReviewSlider: any = styled(Slider)`
   display: flex;
   padding: 1rem;
   gap: 2rem;
-
   .slick-slide {
     display: flex;
     justify-content: center;
@@ -93,6 +83,7 @@ export const ImageContainer = styled.div`
     }
   }
 `;
+
 export const VideoContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -107,6 +98,7 @@ export const VideoContainer = styled.div`
     transition: transform 3s ease;
   }
 `;
+
 export const ButtonContainer = styled(FlexRow)`
   justify-content: center;
   position: relative;
@@ -118,6 +110,12 @@ export const ButtonContainer = styled(FlexRow)`
   & svg:hover {
     opacity: 0.6;
     transition: opacity 0.2s ease-in;
+  }
+  @media screen and (max-width: 900px) {
+    top: 0;
+    & svg {
+      margin: 0 2rem;
+    }
   }
 `;
 

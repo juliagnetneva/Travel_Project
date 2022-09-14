@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SocialFollowStyled = styled.div`
+export const SocialIconsStyled = styled.div`
   a {
     color: #9ea1a8;
     transition: transform 250ms;

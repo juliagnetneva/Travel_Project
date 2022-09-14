@@ -29,6 +29,7 @@ export const sliderSettingsImg = {
       breakpoint: 900,
       settings: {
         slidesToShow: 1,
+        dots: false,
       },
     },
   ],
@@ -51,6 +52,7 @@ export const sliderSettingsVid = {
       breakpoint: 900,
       settings: {
         slidesToShow: 1,
+        dots: false,
       },
     },
   ],

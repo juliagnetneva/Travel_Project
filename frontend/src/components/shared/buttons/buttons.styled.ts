@@ -8,10 +8,19 @@ export const ButtonRed = styled.button`
   padding: 8px 20px;
   font-size: 0.8rem;
   color: #fff;
-
   transition: opacity 0.2s ease;
   :hover {
     background-color: rgba(255, 255, 255, 0.8);
     color: #4f4f4f;
+  }
+`;
+
+export const ButtonWhite = styled(ButtonRed)`
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #444444;
+  margin-right: 0.5rem;
+  :hover {
+    background-color: #ed2f48;
+    color: #fff;
   }
 `;

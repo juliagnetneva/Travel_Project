@@ -14,7 +14,7 @@ export const HeadingRedCursive = styled.span`
   font-family: "Qwitcher Grypen", cursive;
   font-weight: 700;
   font-size: clamp(4rem, 9vw, 10rem);
-  text-shadow: 1px 1px 3px #3b3b3b;
+  text-shadow: 1px 1px 3px #a9a9a9;
 `;
 export const HeadingOutlined = styled.span`
   text-align: center;
@@ -26,6 +26,12 @@ export const HeadingOutlined = styled.span`
   @media screen and (max-width: 960px) {
     letter-spacing: 1rem;
   }
+`;
+export const HeadingLarge = styled.h2`
+  font-size: 2rem;
+  margin: 1rem 0;
+  font-weight: 600;
+  color: ${({ theme }) => theme.theme.text};
 `;
 
 export const HeadingMiddle = styled.h3`

@@ -1,6 +1,6 @@
 import React from "react";
 //
-import { ButtonRed, HeadingMiddle, HeadingSmall } from "../shared";
+import { ButtonRed, HeadingMiddle } from "../shared";
 import {
   BackgroundImage,
   BannerImageStyled,

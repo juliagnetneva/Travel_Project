@@ -12,8 +12,13 @@ import {
   ImageContainer,
   VideoContainer,
 } from "./carousel.styled";
-import { FlexRow, HeadingMiddle, HeadingSmall, LinkMore } from "../shared";
-import { ButtonWhite } from "../shared/buttons/buttonWhite.styled";
+import {
+  ButtonWhite,
+  FlexRow,
+  HeadingMiddle,
+  HeadingSmall,
+  LinkMore,
+} from "../shared";
 
 export const Carousel = ({ title, path, text, settings, data }: any) => {
   const [slider, setSlider] = useState<any>(null);

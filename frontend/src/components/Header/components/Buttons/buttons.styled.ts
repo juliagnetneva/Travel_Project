@@ -4,6 +4,7 @@ export const ButtonsStyled = styled.div`
   margin-left: auto;
   margin-right: 1rem;
   @media screen and (max-width: 960px) {
-    margin: 0 auto;
+    margin-top: 2rem;
+    margin-left: 1rem;
   }
 `;

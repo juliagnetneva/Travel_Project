@@ -11,7 +11,7 @@ export const Burger = () => {
         <div></div>
         <div></div>
       </BurgerStyled>
-      <BurgerMenu open={open} />
+      <BurgerMenu open={open} setOpen={setOpen} />
     </>
   );
 };
