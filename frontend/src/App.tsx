@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 //
 import { ThemeStore } from "./providers/ThemeProvider";
 import { Theme } from "./theme/Theme";
@@ -8,12 +10,23 @@ import {
   ErrorPage,
   HomePage,
   SearchPage,
-  SignUpPage,
   SinglePage,
 } from "./pages";
 import { Container, Footer, Header, Main } from "./components";
+import { IRootState, useAppDispatch } from "./store";
+import { getProfile } from "./store/auth/actionCreators";
 
 function App() {
+  const isLoggedIn = useSelector(
+    (state: IRootState) => !!state.auth.authData.accessToken
+  );
+
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, [dispatch]);
+
   return (
     <Router>
       <ThemeStore>
@@ -23,9 +36,8 @@ function App() {
             <Container>
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/about" element={<AboutPage />} />
-                <Route path="/search" element={<SearchPage />} />
+                <Route path="/search" element={isLoggedIn && <SearchPage />} />
                 <Route path="/search/:id" element={<SinglePage />} />
                 <Route path="*" element={<ErrorPage />} />
               </Routes>

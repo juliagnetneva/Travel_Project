@@ -3,6 +3,7 @@ import ReactPlayer from "react-player";
 //
 import {
   ButtonRed,
+  ButtonWhite,
   HeadingBold,
   HeadingOutlined,
   HeadingRedCursive,
@@ -12,8 +13,14 @@ import {
   HeroBannerImgStyled,
   HeroBannerTextStyled,
 } from "./heroBanner.styled";
+import { IRootState } from "../../store";
+import { useSelector } from "react-redux";
 
 export const HeroBanner = ({ image, video }: any) => {
+  const isLoggedIn = useSelector(
+    (state: IRootState) => !!state.auth.authData.accessToken
+  );
+
   return (
     <HeroBannerContainer>
       <HeroBannerImgStyled>
@@ -37,8 +44,12 @@ export const HeroBanner = ({ image, video }: any) => {
           <br />
           <HeadingOutlined>PLANET</HeadingOutlined>
         </HeadingBold>
-        <ButtonRed>Get started</ButtonRed>
-      </HeroBannerTextStyled>{" "}
+        {isLoggedIn ? (
+          <ButtonWhite>Go to Search</ButtonWhite>
+        ) : (
+          <ButtonRed>Get started</ButtonRed>
+        )}
+      </HeroBannerTextStyled>
     </HeroBannerContainer>
   );
 };

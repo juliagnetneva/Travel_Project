@@ -19,15 +19,20 @@ import {
   HeadingSmall,
   LinkMore,
 } from "../shared";
+import { IRootState } from "../../store";
+import { useSelector } from "react-redux";
 
 export const Carousel = ({ title, path, text, settings, data }: any) => {
+  const isLoggedIn = useSelector(
+    (state: IRootState) => !!state.auth.authData.accessToken
+  );
   const [slider, setSlider] = useState<any>(null);
 
   return (
     <CarouselSection>
       <FlexRow>
         <HeadingMiddle>{title}</HeadingMiddle>
-        <LinkMore path={path} text={text} />
+        {isLoggedIn && <LinkMore path={path} text={text} />}
       </FlexRow>
       <ReviewSlider {...settings} ref={setSlider}>
         {data.map((el: any, index: any) => (
@@ -39,7 +44,7 @@ export const Carousel = ({ title, path, text, settings, data }: any) => {
                 </ImageContainer>
                 <TextContainer>
                   <HeadingSmall>{el.title}</HeadingSmall>
-                  <ButtonWhite>Learn more</ButtonWhite>
+                  {isLoggedIn && <ButtonWhite>Learn more</ButtonWhite>}
                 </TextContainer>
               </>
             ) : (
