@@ -50,7 +50,7 @@ authRouter.get("/refresh", verifyRefreshTokenMiddleware, (req, res) => {
 });
 
 authRouter.get("/profile", verifyAuthorizationMiddleware, (req, res) => {
-  res.send("admin");
+  res.send("travel");
 });
 
 authRouter.get("/logout", (req, res) => {

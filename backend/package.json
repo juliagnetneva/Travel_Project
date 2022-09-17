@@ -5,7 +5,7 @@
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.19"
   },
-  "name": "backend",
+  "name": "auth-backend",
   "version": "1.0.0",
   "main": "index.js",
   "devDependencies": {},
