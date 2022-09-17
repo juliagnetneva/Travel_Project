@@ -1,20 +1,20 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 //
 import { ThemeStore } from "./providers/ThemeProvider";
 import { Theme } from "./theme/Theme";
-import {
-  AboutPage,
-  ErrorPage,
-  HomePage,
-  SearchPage,
-  SinglePage,
-} from "./pages";
-import { Container, Footer, Header, Main } from "./components";
 import { IRootState, useAppDispatch } from "./store";
 import { getProfile } from "./store/auth/actionCreators";
+import { Layout } from "./components/Layout/Layout";
+import {
+  AboutPage,
+  HomePage,
+  LoginPage,
+  ErrorPage,
+  SearchPage,
+  SinglePage,
+} from "./pages/";
 
 function App() {
   const isLoggedIn = useSelector(
@@ -31,19 +31,17 @@ function App() {
     <Router>
       <ThemeStore>
         <Theme>
-          <Header />
-          <Main>
-            <Container>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/search" element={isLoggedIn && <SearchPage />} />
-                <Route path="/search/:id" element={<SinglePage />} />
-                <Route path="*" element={<ErrorPage />} />
-              </Routes>
-            </Container>
-          </Main>
-          <Footer />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<HomePage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/search" element={isLoggedIn && <SearchPage />}>
+                <Route path=":id" element={<SinglePage />} />
+              </Route>
+              <Route path="*" element={<ErrorPage />} />
+            </Route>
+          </Routes>
         </Theme>
       </ThemeStore>
     </Router>

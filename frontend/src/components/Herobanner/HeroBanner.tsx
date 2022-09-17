@@ -45,7 +45,7 @@ export const HeroBanner = ({ image, video }: any) => {
           <HeadingOutlined>PLANET</HeadingOutlined>
         </HeadingBold>
         {isLoggedIn ? (
-          <ButtonWhite>Go to Search</ButtonWhite>
+          <ButtonRed>Go to Search</ButtonRed>
         ) : (
           <ButtonRed>Get started</ButtonRed>
         )}
