@@ -8,7 +8,6 @@ export const Buttons = () => {
   return (
     <ButtonsStyled>
       <Toggler />
-      <ButtonRed>Sign In</ButtonRed>
     </ButtonsStyled>
   );
 };

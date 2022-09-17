@@ -10,7 +10,7 @@ export const BurgerStyled: any = styled.div`
     width: 2.3rem;
     height: 2.2rem;
     position: absolute;
-    top: 30px;
+    top: 37px;
     right: 50px;
     div {
       width: 2.2rem;

@@ -3,7 +3,7 @@ import ActiveNav from "../../../../assets/activ_red.png";
 
 export const NavBarStyled = styled.nav`
   padding: 5px;
-
+  margin-left: auto;
   & a {
     display: inline-block;
     min-width: 7rem;

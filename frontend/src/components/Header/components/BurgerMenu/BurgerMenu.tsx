@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 //
 import { BurgerMenuStyled } from "./burgerMenu.styled";
 import { IRootState } from "../../../../store";
+import { ButtonRed, ButtonWhite } from "../../../shared";
 
 export const BurgerMenu = ({ open, setOpen }: any) => {
   const isLoggedIn = useSelector(
@@ -17,10 +18,15 @@ export const BurgerMenu = ({ open, setOpen }: any) => {
       <NavLink to="/about" onClick={() => setOpen(!open)}>
         About us
       </NavLink>
-      {isLoggedIn && (
-        <NavLink to="/search" onClick={() => setOpen(!open)}>
-          Search
-        </NavLink>
+      {isLoggedIn ? (
+        <>
+          <NavLink to="/search" onClick={() => setOpen(!open)}>
+            Search
+          </NavLink>
+          <ButtonWhite>Log out</ButtonWhite>
+        </>
+      ) : (
+        <ButtonRed>Sign In</ButtonRed>
       )}
     </BurgerMenuStyled>
   );

@@ -10,8 +10,8 @@ export const Header = () => {
       <Container>
         <FlexRow>
           <Logo />
-          <Buttons />
           <NavBar />
+          <Buttons />
           <Burger />
         </FlexRow>
       </Container>
