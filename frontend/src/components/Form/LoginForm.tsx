@@ -2,6 +2,8 @@ import React from "react";
 import { FormEvent, useState } from "react";
 import { useAppDispatch } from "../../store";
 import { loginUser } from "../../store/auth/actionCreators";
+import { ButtonRed, ButtonWhite } from "../shared";
+import { FormStyled, LoginFormStyled } from "./loginForm.styled";
 
 export const LoginForm = () => {
   const dispatch = useAppDispatch();
@@ -16,8 +18,8 @@ export const LoginForm = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <LoginFormStyled>
+      <FormStyled onSubmit={handleSubmit}>
         <div>
           <label htmlFor="login">Login:</label>
           <input
@@ -36,8 +38,9 @@ export const LoginForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button>Submit</button>
-      </form>
-    </div>
+        <ButtonWhite>Back</ButtonWhite>
+        <ButtonRed>Submit</ButtonRed>
+      </FormStyled>
+    </LoginFormStyled>
   );
 };
