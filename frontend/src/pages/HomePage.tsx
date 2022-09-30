@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 //
-import { Banner, BannerImage, Carousel, HeroBanner } from "../components";
+import {
+  Banner,
+  BannerImage,
+  Carousel,
+  HeroBanner,
+  ScrollToTop,
+} from "../components";
 import { data } from "../data/homePageData";
 import { dataImg, sliderSettingsImg } from "../data/carouselData";
 import { dataVid, sliderSettingsVid } from "../data/carouselData";
@@ -10,6 +16,7 @@ export const HomePage = () => {
   return (
     <>
       <HeroBanner video={data.video} image={data.image} />
+      <ScrollToTop />
       <Carousel
         data={dataImg}
         settings={sliderSettingsImg}
