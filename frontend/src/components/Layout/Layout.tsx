@@ -1,8 +1,9 @@
 import React from "react";
+import { Container, Main } from "../shared";
 import { Outlet } from "react-router-dom";
 import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
-import { Container, Main } from "../shared";
+import { ScrollToTop } from "../ScrolltoTop/ScrollToTop";
 
 export const Layout = () => {
   return (
@@ -11,6 +12,7 @@ export const Layout = () => {
       <Main>
         <Container>
           <Outlet />
+          <ScrollToTop />
         </Container>
       </Main>
       <Footer />
