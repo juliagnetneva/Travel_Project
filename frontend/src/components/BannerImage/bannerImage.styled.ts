@@ -7,7 +7,11 @@ export const BannerImageStyled = styled(Section)`
   border-radius: 3px;
   box-shadow: ${({ theme }) => theme.theme.boxShadow};
   position: relative;
+  @media screen and (max-width: 768px) {
+    margin: 2.5rem auto;
+  }
 `;
+
 export const BackgroundImage = styled.div`
   width: 100%;
   height: 450px;
@@ -24,13 +28,18 @@ export const BannerText = styled(FlexColumn)`
   width: 40%;
   height: 450px;
   z-index: 20;
-  color: #d2d2d2;
+  color: #dedede;
+  display: flex;
   justify-content: center;
   align-items: start;
   margin-left: 4rem;
-
   h3 {
-    color: #d2d2d2;
+    color: #dedede;
     margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 440px) {
+    width: 85%;
+    margin: 0 auto;
   }
 `;

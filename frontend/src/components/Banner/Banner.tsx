@@ -6,8 +6,13 @@ import { LinkMore } from "../shared/linkMore/LinkMore";
 import North from "../../assets/randomImg/north.jpg";
 import Volcano from "../../assets/randomImg/volcano.jpg";
 import Beach from "../../assets/randomImg/serf.jpg";
+import {useSelector} from "react-redux";
+import {IRootState} from "../../store";
 
 export const Banner = () => {
+  const isLoggedIn = useSelector(
+      (state: IRootState) => !!state.auth.authData.accessToken
+  );
   return (
     <BannerStyled>
       <ImgWrap>
@@ -17,9 +22,9 @@ export const Banner = () => {
         <Card>
           <div>
             <p>The Big Journey</p>
-            <HeadingSmall>Beach</HeadingSmall>
-            <LinkMore path="/search" text="Explore " />
-          </div>{" "}
+            <HeadingSmall>Beaches</HeadingSmall>
+            {isLoggedIn ? (<LinkMore path="/search" text="Explore " />) : (<LinkMore path="/login" text="Explore " />)}
+          </div>
           <ImgWrap>
             <img src={Beach} alt="Beach" />
           </ImgWrap>
@@ -30,8 +35,8 @@ export const Banner = () => {
           </ImgWrap>
           <div>
             <p>The Big Journey</p>
-            <HeadingSmall>Volcano</HeadingSmall>
-            <LinkMore path="/search" text="Explore " />
+            <HeadingSmall>Volcanoes</HeadingSmall>
+            {isLoggedIn ? (<LinkMore path="/search" text="Explore " />) : (<LinkMore path="/login" text="Explore " />)}
           </div>
         </Card>
       </BannerCards>

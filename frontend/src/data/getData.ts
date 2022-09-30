@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+// AIzaSyDxdo8KdAt6VI2vBCJmQm-wbYvyskPdwFg key for google map
 export const getPlacesData = async () => {
     // try {
     //     const { data: { data } } = await axios.get(`https://travel-advisor.p.rapidapi.com/${type}/list-in-boundary`, {

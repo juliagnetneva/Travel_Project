@@ -8,6 +8,7 @@ import {
   BannerText,
 } from "./bannerImage.styled";
 import { IRootState } from "../../store";
+import {Link} from "react-router-dom";
 
 export const BannerImage = ({ image }: any) => {
   const isLoggedIn = useSelector(
@@ -22,16 +23,11 @@ export const BannerImage = ({ image }: any) => {
       <BannerText>
         <HeadingMiddle>Become a Member</HeadingMiddle>
         <p>Exclusive rates, earn points towards free nights and more.</p>
+          <p>Have a nice rest!</p>
         {isLoggedIn ? (
-          <>
-            <p>Have a nice rest!</p>
-            <ButtonWhite>Go to Search</ButtonWhite>
-          </>
+          <Link to="/search"><ButtonWhite>Go to Search</ButtonWhite></Link>
         ) : (
-          <>
-            <p>Sign up today for free.</p>
-            <ButtonRed>Sign In</ButtonRed>
-          </>
+            <Link to="/login"><ButtonRed>Sign In</ButtonRed></Link>
         )}
       </BannerText>
     </BannerImageStyled>

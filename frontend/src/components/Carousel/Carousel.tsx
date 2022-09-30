@@ -13,14 +13,16 @@ import {
   VideoContainer,
 } from "./carousel.styled";
 import {
-  ButtonWhite,
-  FlexRow,
-  HeadingMiddle,
-  HeadingSmall,
-  LinkMore,
+    ButtonRed,
+    ButtonWhite,
+    FlexRow,
+    HeadingMiddle,
+    HeadingSmall,
+    LinkMore,
 } from "../shared";
 import { IRootState } from "../../store";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
 export const Carousel = ({ title, path, text, settings, data }: any) => {
   const isLoggedIn = useSelector(
@@ -44,7 +46,11 @@ export const Carousel = ({ title, path, text, settings, data }: any) => {
                 </ImageContainer>
                 <TextContainer>
                   <HeadingSmall>{el.title}</HeadingSmall>
-                  {isLoggedIn && <ButtonWhite>Learn more</ButtonWhite>}
+                    {isLoggedIn ? (
+                        <Link to='/search'><ButtonWhite>Learn more</ButtonWhite></Link>
+                    ) : (
+                        <Link to='/login'><ButtonWhite>Learn more</ButtonWhite></Link>
+                    )}
                 </TextContainer>
               </>
             ) : (

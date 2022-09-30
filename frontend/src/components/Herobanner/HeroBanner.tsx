@@ -15,6 +15,7 @@ import {
 } from "./heroBanner.styled";
 import { IRootState } from "../../store";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 
 export const HeroBanner = ({ image, video }: any) => {
   const isLoggedIn = useSelector(
@@ -45,9 +46,9 @@ export const HeroBanner = ({ image, video }: any) => {
           <HeadingOutlined>PLANET</HeadingOutlined>
         </HeadingBold>
         {isLoggedIn ? (
-          <ButtonRed>Go to Search</ButtonRed>
+            <Link to='/search'><ButtonRed>Go to Search</ButtonRed></Link>
         ) : (
-          <ButtonRed>Get started</ButtonRed>
+            <Link to='/login'><ButtonRed>Get started</ButtonRed></Link>
         )}
       </HeroBannerTextStyled>
     </HeroBannerContainer>

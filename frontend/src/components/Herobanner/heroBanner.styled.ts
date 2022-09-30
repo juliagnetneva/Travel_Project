@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
 export const HeroBannerContainer = styled.div`
-  height: 40vw;
+  height: calc(45vw - 140px);
   @media screen and (max-width: 960px) {
-    height: 40vw;
+    height: calc(60vw - 110px);
   }
   @media screen and (max-width: 768px) {
-    height: 35vh;
+    height: calc(50vh - 100px);
+    min-height: 45vw;
   }
 `;
 
@@ -19,10 +20,11 @@ export const HeroBannerImgStyled = styled.div`
   right: 0;
   width: 100%;
   @media screen and (max-width: 960px) {
-    height: 50vw;
+    height: 60vw;
   }
   @media screen and (max-width: 768px) {
-    height: 45vh;
+    height: 50vh;
+    min-height: 60vw;
   }
   & img {
     width: 100%;

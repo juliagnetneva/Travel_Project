@@ -11,24 +11,10 @@ export const BannerStyled = styled(Section)`
   display: flex;
   flex-direction: row;
   @media screen and (max-width: 768px) {
-    height: 40vh;
+    height: 370px;
     & > *:first-child {
       display: none;
     }
-  }
-`;
-
-export const ImgWrap = styled.div`
-  overflow: hidden;
-  height: 100%;
-  width: 55%;
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  @media screen and (max-width: 768px) {
-    width: 70%;
   }
 `;
 
@@ -38,26 +24,45 @@ export const BannerCards = styled(FlexColumn)`
   width: 44%;
   @media screen and (max-width: 768px) {
     width: 100%;
+    justify-content: space-between;
+    padding: 0.7rem;
   }
 `;
-
 export const Card = styled(FlexRow)`
   align-items: start;
   justify-content: center;
   width: 100%;
   height: 47%;
   color: ${({ theme }) => theme.theme.text};
-  div {
-    margin-left: 1rem;
-  }
-  img {
-    border-radius: 7px;
-  }
   h4 {
     font-family: "Lexend Exa", sans-serif;
+    margin: 0 5px;
   }
   p {
     font-size: 0.8rem;
-    margin-top: 5px;
+    margin: 5px;
+    line-height: 1.5;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    
+  }
+`;
+
+export const ImgWrap = styled.div`
+  overflow: hidden;
+  height: 100%;
+  width: 60%;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 78%;
   }
 `;
