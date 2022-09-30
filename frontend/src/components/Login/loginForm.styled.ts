@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 export const LoginFormStyled = styled.div`
-  margin: 0 auto;
   width: fit-content;
+  margin: 4rem auto 0;
+  position: relative;
+  
+  @media screen and (max-width: 960px) {
+    margin: 4.5rem auto 0;
+  }
 `;
 
 export const FormStyled = styled.form`
   max-width: 300px;
   position: relative;
-  margin: 60px auto 30px;
   padding: 10px;
   overflow: hidden;
   background-color: ${({ theme }) => theme.theme.sectionBackground};
@@ -56,3 +60,19 @@ export const FormStyled = styled.form`
     }
   }
 `;
+
+export const LoginPageBackground = styled.div`
+  background-color: #6593c5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+`
