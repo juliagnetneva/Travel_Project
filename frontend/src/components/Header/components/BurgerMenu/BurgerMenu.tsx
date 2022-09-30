@@ -1,15 +1,18 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 //
 import { BurgerMenuStyled } from "./burgerMenu.styled";
-import { IRootState } from "../../../../store";
-import { ButtonRed, ButtonWhite } from "../../../shared";
+import { IRootState, useAppDispatch } from "../../../../store";
+import { Button } from "../../../shared";
+import { logoutUser } from "../../../../store/auth/actionCreators";
 
 export const BurgerMenu = ({ open, setOpen }: any) => {
+  const dispatch = useAppDispatch();
   const isLoggedIn = useSelector(
     (state: IRootState) => !!state.auth.authData.accessToken
   );
+
   return (
     <BurgerMenuStyled open={open}>
       <NavLink to="/" onClick={() => setOpen(!open)}>
@@ -23,10 +26,14 @@ export const BurgerMenu = ({ open, setOpen }: any) => {
           <NavLink to="/search" onClick={() => setOpen(!open)}>
             Search
           </NavLink>
-          <ButtonWhite>Log out</ButtonWhite>
+          <Button onClick={() => dispatch(logoutUser())}>
+            Log out
+          </Button>
         </>
       ) : (
-        <ButtonRed>Sign In</ButtonRed>
+        <Link to="/search">
+          <Button red>Sign In</Button>
+        </Link>
       )}
     </BurgerMenuStyled>
   );

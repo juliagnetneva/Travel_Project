@@ -10,6 +10,7 @@ export const FooterStyled = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 20;
 
   @media screen and (max-width: 960px) {
     min-height: 80px;

@@ -13,8 +13,7 @@ import {
   VideoContainer,
 } from "./carousel.styled";
 import {
-    ButtonRed,
-    ButtonWhite,
+    Button,
     FlexRow,
     HeadingMiddle,
     HeadingSmall,
@@ -47,9 +46,9 @@ export const Carousel = ({ title, path, text, settings, data }: any) => {
                 <TextContainer>
                   <HeadingSmall>{el.title}</HeadingSmall>
                     {isLoggedIn ? (
-                        <Link to='/search'><ButtonWhite>Learn more</ButtonWhite></Link>
+                        <Link to='/search'><Button>Learn more</Button></Link>
                     ) : (
-                        <Link to='/login'><ButtonWhite>Learn more</ButtonWhite></Link>
+                        <Link to='/login'><Button>Learn more</Button></Link>
                     )}
                 </TextContainer>
               </>

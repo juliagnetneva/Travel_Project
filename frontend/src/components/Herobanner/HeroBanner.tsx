@@ -2,7 +2,7 @@ import React from "react";
 import ReactPlayer from "react-player";
 //
 import {
-  ButtonRed,
+  Button,
   HeadingBold,
   HeadingOutlined,
   HeadingRedCursive,
@@ -45,9 +45,9 @@ export const HeroBanner = ({ image, video }: any) => {
           <HeadingOutlined>PLANET</HeadingOutlined>
         </HeadingBold>
         {isLoggedIn ? (
-            <Link to='/search'><ButtonRed>Go to Search</ButtonRed></Link>
+            <Link to='/search'><Button red>Go to Search</Button></Link>
         ) : (
-            <Link to='/login'><ButtonRed>Get started</ButtonRed></Link>
+            <Link to='/login'><Button red>Get started</Button></Link>
         )}
       </HeroBannerTextStyled>
     </HeroBannerContainer>

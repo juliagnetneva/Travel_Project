@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom";
 //
-import { ButtonRed, ButtonWhite, HeadingMiddle } from "../shared";
+import { Button, HeadingMiddle } from "../shared";
 import {
   BackgroundImage,
   BannerImageStyled,
@@ -26,9 +26,9 @@ export const BannerImage = () => {
         <p>Exclusive rates, earn points towards free nights and more.</p>
           <p>Have a nice rest!</p>
         {isLoggedIn ? (
-          <Link to="/search"><ButtonWhite>Go to Search</ButtonWhite></Link>
+          <Link to="/search"><Button>Go to Search</Button></Link>
         ) : (
-            <Link to="/login"><ButtonRed>Sign In</ButtonRed></Link>
+            <Link to="/login"><Button red>Sign In</Button></Link>
         )}
       </BannerText>
     </BannerImageStyled>
