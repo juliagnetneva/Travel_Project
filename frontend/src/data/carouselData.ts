@@ -8,7 +8,6 @@ import Video1 from "../assets/video/video_carous.mp4";
 import Video2 from "../assets/video/video_carousel.mp4";
 import Video3 from "../assets/video/video_carousel3.mp4";
 import Video4 from "../assets/video/video_carousel4.mp4";
-import Video5 from "../assets/video/video_carousel5.mp4";
 
 export const sliderSettingsImg = {
   arrows: false,
@@ -126,9 +125,5 @@ export const dataVid = [
   {
     video: Video4,
     title: "Route des Grandes Alpes",
-  },
-  {
-    video: Video5,
-    title: "Route des Grandes Alpes",
-  },
+  }
 ];

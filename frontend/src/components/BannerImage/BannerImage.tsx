@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import {Link} from "react-router-dom";
 //
 import { ButtonRed, ButtonWhite, HeadingMiddle } from "../shared";
 import {
@@ -8,9 +9,9 @@ import {
   BannerText,
 } from "./bannerImage.styled";
 import { IRootState } from "../../store";
-import {Link} from "react-router-dom";
+import Beach from "../../assets/homepage/beach.jpg";
 
-export const BannerImage = ({ image }: any) => {
+export const BannerImage = () => {
   const isLoggedIn = useSelector(
     (state: IRootState) => !!state.auth.authData.accessToken
   );
@@ -18,7 +19,7 @@ export const BannerImage = ({ image }: any) => {
   return (
     <BannerImageStyled>
       <BackgroundImage>
-        <img src={image} />
+        <img src={Beach} />
       </BackgroundImage>
       <BannerText>
         <HeadingMiddle>Become a Member</HeadingMiddle>

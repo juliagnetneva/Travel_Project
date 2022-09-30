@@ -10,7 +10,6 @@ import {
 import { data } from "../data/homePageData";
 import { dataImg, sliderSettingsImg } from "../data/carouselData";
 import { dataVid, sliderSettingsVid } from "../data/carouselData";
-import BannerSmallImage from "../assets/bannerSmall.jpg";
 
 export const HomePage = () => {
   return (
@@ -25,7 +24,7 @@ export const HomePage = () => {
         text={"View more "}
       />
       <Banner />
-      <BannerImage image={BannerSmallImage} />
+      <BannerImage />
       <Carousel
         data={dataVid}
         settings={sliderSettingsVid}

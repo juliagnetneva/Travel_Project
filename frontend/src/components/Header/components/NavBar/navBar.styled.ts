@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ActiveNav from "../../../../assets/activ_red.png";
+import ActiveNav from "../../../../assets/activ_navbar.png";
 
 export const NavBarStyled = styled.nav`
   padding: 5px;

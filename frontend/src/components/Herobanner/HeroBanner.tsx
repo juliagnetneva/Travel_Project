@@ -3,7 +3,6 @@ import ReactPlayer from "react-player";
 //
 import {
   ButtonRed,
-  ButtonWhite,
   HeadingBold,
   HeadingOutlined,
   HeadingRedCursive,

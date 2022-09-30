@@ -1,12 +1,11 @@
 import React from "react";
+import {useSelector} from "react-redux";
 //
 import { BannerCards, BannerStyled, Card, ImgWrap } from "./banner.styled";
-import { HeadingSmall } from "../shared";
-import { LinkMore } from "../shared/linkMore/LinkMore";
-import North from "../../assets/randomImg/north.jpg";
-import Volcano from "../../assets/randomImg/volcano.jpg";
-import Beach from "../../assets/randomImg/serf.jpg";
-import {useSelector} from "react-redux";
+import {HeadingSmall, LinkMore} from "../shared";
+import North from "../../assets/homepage/north.jpg";
+import Volcano from "../../assets/homepage/volcano.jpg";
+import Beach from "../../assets/homepage/serf.jpg";
 import {IRootState} from "../../store";
 
 export const Banner = () => {
