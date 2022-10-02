@@ -42,4 +42,9 @@ a:hover {
 ul li {
   list-style: none;
 }
+
+#mapId {
+  width: 100%;
+  height: 100%;
+}
 `;

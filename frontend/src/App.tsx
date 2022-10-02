@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Navigate} from "react-router-dom";
+import "leaflet/dist/leaflet.css";
 //
 import { ThemeStore } from "./providers/ThemeProvider";
 import { Theme } from "./theme/Theme";
 import { IRootState, useAppDispatch } from "./store";
 import { getProfile } from "./store/auth/actionCreators";
-import { Layout } from "./components/Layout/Layout";
+import {Layout} from "./components";
 import {
   AboutPage,
   HomePage,
   LoginPage,
   ErrorPage,
   SearchPage,
-  SinglePage,
 } from "./pages/";
 
 function App() {
@@ -36,9 +36,7 @@ function App() {
               <Route index element={<HomePage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/login" element={<LoginPage />} />
-              <Route path="/search" element={isLoggedIn && <SearchPage />}>
-                <Route path=":id" element={<SinglePage />} />
-              </Route>
+              <Route path="/search" element={isLoggedIn ? <SearchPage /> : <Navigate to="/"/>} />
               <Route path="*" element={<ErrorPage />} />
             </Route>
           </Routes>
