@@ -9,7 +9,7 @@ export const Footer = () => {
   return (
     <FooterStyled>
       <Container>
-        <FlexRow start={"start"}>
+        <FlexRow start>
           <Link to="/">
             <Logo></Logo>
           </Link>

@@ -21,10 +21,10 @@ export const Section = styled.section`
   margin: 0 auto;
 `;
 
-export const FlexRow: any = styled.div`
+export const FlexRow = styled.div<{ start?: boolean }>`
   display: flex;
   flex-direction: row;
-  align-items: ${({ start }: any) => (start ? "start" : "center")};
+  align-items: ${({ start }) => (start ? "start" : "center")};
   justify-content: space-between;
 `;
 export const FlexColumn = styled.div`

@@ -10,9 +10,6 @@ export const CarouselSection = styled(Section)`
 
 export const ReviewSlider: any = styled(Slider)`
   width: 100%;
-  .slick-list {
-    //overflow: hidden;
-  }
   .slick-dots {
     display: flex !important;
     flex-direction: row;

@@ -4,4 +4,5 @@ export * from "./text.styled";
 export * from "./logo/Logo";
 export * from "./linkMore/LinkMore";
 export * from "./socialIcons/SocialIcons";
-export * from "./popup/Popup";
+export * from "./popup/PopupModal";
+export * from "./scrolltoTop/ScrollToTop";

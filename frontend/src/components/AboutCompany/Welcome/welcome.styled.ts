@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const WelcomeStyled = styled.div`
   color: ${({ theme }) => theme.theme.text};
   text-align: center;
+  margin-top: 2rem;
   h2 {
     font-weight: 400;
     font-size: 2rem;

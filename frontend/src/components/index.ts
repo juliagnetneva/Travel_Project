@@ -7,5 +7,5 @@ export * from "./Login/LoginForm";
 export * from "./Header/Header";
 export * from "./Herobanner/HeroBanner";
 export * from "./Layout/Layout";
-export * from "./ScrolltoTop/ScrollToTop";
 export * from "./shared/index";
+export * from "./Search/components/index";
