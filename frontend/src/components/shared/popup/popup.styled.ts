@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PopupOverlay = styled.div`
   position: absolute;
-  z-index: 99;
+  z-index: 9999;
   top: 0;
   right: 0;
   bottom: 0;
@@ -13,13 +13,13 @@ export const PopupOverlay = styled.div`
   align-items: center;
 `;
 
-export const PopupModal = styled.div`
+export const PopupStyled = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   min-height: 130px;
-  max-width: 300px;
+  max-width: 350px;
   padding: 1rem 1.5rem;
   background-color: ${({ theme }) => theme.theme.sectionBackground};
   border-radius: 0.4em;

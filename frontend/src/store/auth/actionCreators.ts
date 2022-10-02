@@ -28,7 +28,7 @@ export const loginUser =
     } catch (e: any) {
       console.error(e);
 
-      dispatch(loginFailure(e.message));
+      dispatch(loginFailure(e.response.data));
     }
   };
 

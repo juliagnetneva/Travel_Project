@@ -1,17 +1,16 @@
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 //
 import { IRootState, useAppDispatch } from "../../store";
 import { loginUser, logoutUser } from "../../store/auth/actionCreators";
-import { Button, Popup } from "../shared";
+import { Button, PopupModal } from "../shared";
 import { FormStyled, LoginFormStyled } from "./loginForm.styled";
 
 export const LoginForm = () => {
   const dispatch = useAppDispatch();
-
-  const [login, setLogin] = useState("");
-  const [password, setPassword] = useState("");
+  const loginRef = useRef<any>("");
+  const passwordRef = useRef<any>("");
   const [showPopup, setShowPopup] = useState(false);
 
   const isLoggedIn = useSelector(
@@ -24,10 +23,12 @@ export const LoginForm = () => {
     (state: IRootState) => state.auth.authData.error
   );
 
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const login = loginRef.current.value;
+    const password = passwordRef.current.value;
     dispatch(loginUser({ login, password }));
     setShowPopup(true);
   };
@@ -42,37 +43,30 @@ export const LoginForm = () => {
   return (
     <>
       {showPopup && (
-        <Popup
-          handleCloseButton={handleClosePopup}
+        <PopupModal
+            handleClickButton={handleClosePopup}
+            buttonName="OK"
           text={
             errorMessage
-              ? `${errorMessage}! Try again`
-              : `${profile}, You have successfully signed in!`
+              ? `${errorMessage}`
+              : `${profile}, you have successfully signed in!`
           }
         />
       )}
       <LoginFormStyled>
         {isLoggedIn ? (
-          <Button red onClick={() => dispatch(logoutUser())}>Log out</Button>
+          <Button red onClick={() => dispatch(logoutUser())}>
+            Log out
+          </Button>
         ) : (
           <FormStyled onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="login">Login:</label>
-              <input
-                name="login"
-                type="text"
-                value={login}
-                onChange={(e) => setLogin(e.target.value)}
-              />
+              <label>Login:</label>
+              <input type="text" ref={loginRef} />
             </div>
             <div>
-              <label htmlFor="password">Password:</label>
-              <input
-                name="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
+              <label>Password:</label>
+              <input type="password" ref={passwordRef} />
             </div>
             <Link to="/">
               <Button>Back</Button>

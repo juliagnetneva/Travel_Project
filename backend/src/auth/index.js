@@ -20,8 +20,8 @@ authRouter.post("/login", (req, res) => {
     .digest("hex");
   const isVerifiedPassword = hash === fakeUser.passwordHash;
 
-  if (login !== fakeUser.login || !isVerifiedPassword) {
-    return res.status(401).send("Login fail");
+  if (login !== fakeUser.login || !isVerifiedPassword)  {
+    return res.status(401).send("Login failed! Your login or password is incorrect. Please try again");
   }
 
   const { accessToken, refreshToken } = getTokens(login);

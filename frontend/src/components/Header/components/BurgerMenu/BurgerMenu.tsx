@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 //
 import { BurgerMenuStyled } from "./burgerMenu.styled";
@@ -12,7 +12,12 @@ export const BurgerMenu = ({ open, setOpen }: any) => {
   const isLoggedIn = useSelector(
     (state: IRootState) => !!state.auth.authData.accessToken
   );
-
+  const navigate = useNavigate();
+  const handleClickLogout = () => {
+    dispatch(logoutUser());
+    setOpen(!open);
+    navigate("/");
+  };
   return (
     <BurgerMenuStyled open={open}>
       <NavLink to="/" onClick={() => setOpen(!open)}>
@@ -26,12 +31,10 @@ export const BurgerMenu = ({ open, setOpen }: any) => {
           <NavLink to="/search" onClick={() => setOpen(!open)}>
             Search
           </NavLink>
-          <Button onClick={() => dispatch(logoutUser())}>
-            Log out
-          </Button>
+          <Button onClick={handleClickLogout}>Log out</Button>
         </>
       ) : (
-        <Link to="/search">
+        <Link to="/login" onClick={() => setOpen(!open)}>
           <Button red>Sign In</Button>
         </Link>
       )}
