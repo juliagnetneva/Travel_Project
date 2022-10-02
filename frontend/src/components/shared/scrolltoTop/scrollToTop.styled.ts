@@ -4,8 +4,8 @@ export const ScrollStyled = styled.div<{ scrollState: boolean }>`
   display: ${({scrollState}) => (scrollState ? "block" : "none")};
   position: fixed;
   cursor: pointer;
-  z-index: 10;
-  bottom: 1rem;
+  z-index: 99;
+  bottom: 2rem;
   right: 2rem;
   border-radius: 2rem;
   color: #ec2f48;
